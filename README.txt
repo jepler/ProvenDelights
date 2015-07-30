@@ -2,9 +2,9 @@
 
 This project aims to include templated C++ implementations of many of the
 algorithms from http://www.hackersdelight.org/[Hacker's Delight], alongside
-CBMC proofs of the implementations.  While the implementations are typically
-trivial, that they work at all is often nonobvious.  Proofs can show that they
-work for all input values.
+http://www.cprover.org/cbmc/[CBMC]  proofs of the implementations.  While the
+implementations are typically trivial, that they work at all is often
+nonobvious.  Proofs can show that they work for all input values.
 
 The fully built documentation of a recent version can always be found online:
 http://jepler.github.io/ProvenDelights/
@@ -50,8 +50,9 @@ plan that the oldest supported environment will be Debian oldstable.
 
 This means that the minimum versions of relevant software are:
 
-* asciidoc 8.6.7
-* cbmc 4.1
+* http://asciidoc.org/[asciidoc 8.6.7]
+* http://www.cprover.org/cbmc/[cbmc 4.1]
+* http://python.org[python 3.2.3]
 
 === Building
 The software is built by invoking +make+ in the top-level directory.
