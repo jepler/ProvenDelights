@@ -59,11 +59,11 @@ gen-include/%.h: proofs/%.txt preprocess.py
 proofs: $(PROOFS)
 
 .PHONY: html
-html: doc/proofs.html
+html: doc/index.html
 
 DOCDEPS :=  structure/main.txt $(FILES) $(wildcard structure/*.txt) README.txt
 
-doc/proofs.html: $(DOCDEPS) structure/main-docinfo.html
+doc/index.html: $(DOCDEPS) structure/main-docinfo.html
 	$(ECHO) "HTML " $@
 	$(Q)asciidoc -a docinfo= -n -b html5 -o $@ $<
 
@@ -93,3 +93,7 @@ $(shell mkdir -p doc)
 .PHONY: prove-%
 prove-%: .o/%_proof.txt
 	@:
+
+publish:
+	$(ECHO) "PUBLISH"
+	$(V)./docimport.py | git fast-import --date-format=now

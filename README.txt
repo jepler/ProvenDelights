@@ -6,6 +6,9 @@ CBMC proofs of the implementations.  While the implementations are typically
 trivial, that they work at all is often nonobvious.  Proofs can show that they
 work for all input values.
 
+The fully built documentation of a recent version can always be found online:
+http://jepler.github.io/ProvenDelights/
+
 === Structure
 ==== The proofs/ directory
 Each file in proofs/ is an asciidoc document.  It must contain a code section
