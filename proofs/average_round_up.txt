@@ -1,0 +1,20 @@
+==== Average, rounded up
+
+.Implementation
+----
+template<class T> T average_round_up(T x, T y) {
+    return (x | y) - ((x ^ y) >> 1);
+}
+----
+
+.Proof
+----
+int main() {
+    unsigned x = nondet_unsigned();
+    unsigned y = nondet_unsigned();
+    unsigned z = average_round_up(x, y);
+    unsigned w = (uint64_t(x) + y + 1) / 2;
+    assert(z == w);
+    return 0;
+}
+----

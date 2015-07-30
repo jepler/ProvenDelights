@@ -1,0 +1,21 @@
+== Basics
+
+=== Manipulating Rightmost Bits
+
+include::../proofs/turn_off_rightmost_one.txt[]
+include::../proofs/next_with_same_popcnt.txt[]
+
+=== (intentionally left blank)
+(intentionally left blank)
+
+=== (intentionally left blank)
+(intentionally left blank)
+
+=== (intentionally left blank)
+(intentionally left blank)
+
+=== Average of two integers
+
+include::../proofs/average_round_down.txt[]
+
+include::../proofs/average_round_up.txt[]

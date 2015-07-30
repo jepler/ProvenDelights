@@ -1,0 +1,18 @@
+= Proven Delights -- proofs of algorithms from Hackers Delight (second edition)
+Jeff Epler <jepler@gmail.com>
+v0.1, 2015-07
+:toc:
+
+include::../README.txt[]
+
+<<<
+include::chapter2.txt[]
+
+== (intentionally left blank)
+(intentionally left blank)
+
+== (intentionally left blank)
+(intentionally left blank)
+
+<<<
+include::chapter5.txt[]

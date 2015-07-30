@@ -1,0 +1,16 @@
+==== Turn off rightmost one
+
+.Implementation
+----
+template<class T> T turn_off_rightmost_one(T x) { return x & (x - 1); }
+----
+
+.Proof
+----
+int main() {
+    int x = nondet_int() | 1;
+    int y = nondet_int() & 31;
+    int z = x << y;
+    assert(turn_off_rightmost_one(z) == (z ^ (1<<y)));
+}
+----

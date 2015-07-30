@@ -1,0 +1,5 @@
+== Counting Bits
+
+=== Counting 1-bits
+
+include::../proofs/pop.txt[]

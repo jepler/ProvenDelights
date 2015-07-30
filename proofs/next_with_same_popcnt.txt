@@ -1,0 +1,32 @@
+==== Next with same popcnt
+Note that +next_with_same_popcnt+ may not be called with 0 (this leads
+to division by zero).
+
+When it is called with the largest number of a given popcnt, I don't understand
+the interpretation of the return value, so I don't assert anything about that
+case.
+
+.Implementation
+----
+template<class T> T next_with_same_popcnt(T x) {
+    T s = x & -x;
+    T r = s + x;
+    return r | (((x ^ r) >> 2) / s);
+}
+----
+
+.Proof
+----
+int main() {
+    unsigned u = nondet_unsigned();
+    assume(u != 0);
+    unsigned v = next_with_same_popcnt(u);
+    unsigned w = nondet_unsigned();
+
+    if(v > u) {
+        assume(w > v && w < u);
+        assert(proof_popcnt(u) == proof_popcnt(v));
+        assert(proof_popcnt(u) != proof_popcnt(w));
+    }        
+}
+----
