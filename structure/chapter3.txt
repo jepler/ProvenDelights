@@ -1,7 +1,7 @@
 == Power-of-2 Boundaries
 
-=== (intentionally left blank)
-(intentionally left blank)
+=== (No proofs in this section)
+{nbsp}
 
 === Rounding Up/Down to the Next Power of 2
 
