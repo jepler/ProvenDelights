@@ -19,11 +19,11 @@ int16_t nondet_s16();
 int32_t nondet_s32();
 int64_t nondet_s64();
 
-inline int proof_popcnt(unsigned u)
+inline int proof_popcnt(uint64_t u)
 {
     int r = 0;
-    for(int i=0; i<32; i++)
-        if(u & (1u << i)) r ++;
+    for(int i=0; i<64; i++)
+        if(u & (1ull << i)) r ++;
     return r;
 }
 #endif
