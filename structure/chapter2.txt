@@ -5,14 +5,14 @@
 include::../proofs/turn_off_rightmost_one.txt[]
 include::../proofs/next_with_same_popcnt.txt[]
 
-=== (intentionally left blank)
-(intentionally left blank)
+=== (no proofs in this section)
+{nbsp}
 
-=== (intentionally left blank)
-(intentionally left blank)
+=== (no proofs in this section)
+{nbsp}
 
-=== (intentionally left blank)
-(intentionally left blank)
+=== (no proofs in this section)
+{nbsp}
 
 === Average of two integers
 

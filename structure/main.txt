@@ -18,8 +18,8 @@ include::chapter2.txt[]
 <<<
 include::chapter3.txt[]
 
-== (intentionally left blank)
-(intentionally left blank)
+== (no proofs in this chapter)
+{nbsp}
 
 <<<
 include::chapter5.txt[]
