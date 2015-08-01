@@ -3,3 +3,10 @@
 === Counting 1-bits
 
 include::../proofs/pop.txt[]
+
+=== (intentionally left blank)
+(intentionally left blank)
+
+=== Counting Leading 0s
+
+include::../proofs/nlz.txt[]
