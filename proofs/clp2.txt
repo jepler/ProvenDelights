@@ -30,5 +30,6 @@ void prove() {
 
 int main() {
     prove<unsigned>();
+    prove<uint64_t>();
 }
 ----
