@@ -26,4 +26,8 @@ inline int proof_popcnt(uint64_t u)
         if(u & (1ull << i)) r ++;
     return r;
 }
+
+template<class T>
+T nondet() { return T(nondet_u64()); }
+
 #endif
