@@ -1,5 +1,6 @@
 ==== Counting 1-bits in a word
 .Implementation
+[source]
 ----
 int pop(unsigned x) {
    x = x - ((x >> 1) & 0x55555555);
@@ -12,6 +13,7 @@ int pop(unsigned x) {
 ----
 
 .Proof
+[source]
 ----
 int main() {
     unsigned u = nondet_unsigned();

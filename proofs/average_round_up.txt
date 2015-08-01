@@ -1,6 +1,7 @@
 ==== Average, rounded up
 
 .Implementation
+[source]
 ----
 template<class T> T average_round_up(T x, T y) {
     return (x | y) - ((x ^ y) >> 1);
@@ -8,6 +9,7 @@ template<class T> T average_round_up(T x, T y) {
 ----
 
 .Proof
+[source]
 ----
 int main() {
     unsigned x = nondet_unsigned();

@@ -1,11 +1,13 @@
 ==== Turn off rightmost one
 
 .Implementation
+[source]
 ----
 template<class T> T turn_off_rightmost_one(T x) { return x & (x - 1); }
 ----
 
 .Proof
+[source]
 ----
 int main() {
     int x = nondet_int() | 1;
