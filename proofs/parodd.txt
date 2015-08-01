@@ -1,0 +1,22 @@
+==== Add Odd Parity in MSB
+
+.Implementation
+[source]
+----
+inline uint8_t parodd(uint8_t x) {
+    return ((x * 0x204081) | 0x3db6db00) % 1152;
+}
+----
+
+.Proof
+[source]
+----
+#include <parity.h>
+
+int main() {
+    uint8_t x = nondet<uint8_t>() & 0x7f;
+    uint8_t y = parodd(x);
+    assert((y & 0x7f) == x);
+    assert(parity(y));
+}
+----

@@ -1,0 +1,47 @@
+==== Compute Parity
+
+.Implementation
+[source]
+----
+inline int parity(uint8_t x) {
+    x ^= (x >> 4);
+    return (0x6996 >> (x & 0xf)) & 1;
+}
+
+inline int parity(uint16_t x) {
+    x ^= (x >> 8);
+    x ^= (x >> 4);
+    return (0x6996 >> (x & 0xf)) & 1;
+}
+
+inline int parity(uint32_t x) {
+    x ^= (x >> 16);
+    return parity(uint16_t(x));
+}
+
+inline int parity(uint64_t x) {
+    x ^= (x >> 32);
+    return parity(uint32_t(x));
+}
+----
+
+The proof for 64-bit inputs takes an infeasibly long time and consequently
+is disabled.
+
+.Proof
+[source]
+----
+template<class T> void prove() {
+    T x = nondet<T>();
+    int px = parity(x);
+    int pc = proof_popcnt(x) & 1;
+    assert(pc == px);
+}
+
+int main() {
+    prove<uint8_t>();
+    prove<uint16_t>();
+    prove<uint32_t>();
+//    prove<uint64_t>();
+}
+----

@@ -1,0 +1,22 @@
+==== Add Even Parity in MSB
+
+.Implementation
+[source]
+----
+inline uint8_t pareven(uint8_t x) {
+    return ((x * 0x10204081) & 0x888888ff) % 1920;
+}
+----
+
+.Proof
+[source]
+----
+#include <parity.h>
+
+int main() {
+    uint8_t x = nondet<uint8_t>() & 0x7f;
+    uint8_t y = pareven(x);
+    assert((y & 0x7f) == x);
+    assert(!parity(y));
+}
+----

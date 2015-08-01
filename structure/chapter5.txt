@@ -4,8 +4,13 @@
 
 include::../proofs/pop.txt[]
 
-=== (intentionally left blank)
-(intentionally left blank)
+=== Parity
+
+include::../proofs/parity.txt[]
+
+include::../proofs/pareven.txt[]
+
+include::../proofs/parodd.txt[]
 
 === Counting Leading 0s
 
