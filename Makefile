@@ -94,6 +94,9 @@ $(shell mkdir -p doc)
 prove-%: .o/%_proof.txt
 	@:
 
-publish:
+.PHONY: publish
+publish: docs
 	$(ECHO) "PUBLISH"
+	$(V)git branch -D gh-pages || true
 	$(V)./docimport.py | git fast-import --date-format=now
+	$(V)git push -f origin gh-pages
