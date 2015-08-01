@@ -7,13 +7,13 @@ def get_block(l, h):
     i = l.index('.' + h)
     j = l.index('----', i+1)
     k = l.index('----', j+1)
-    return l[j+1:k]
+    return j+1, l[j+1:k]
 
 def convert(fn, args):
     with open(fn) as f:
-        lines = [line.strip() for line in f]
-        implementation = get_block(lines, args.imarker)
-        proof = get_block(lines, args.pmarker)
+        lines = [line.rstrip() for line in f]
+        _, implementation = get_block(lines, args.imarker)
+        proof_line, proof = get_block(lines, args.pmarker)
 
     basename = os.path.splitext(os.path.basename(fn))[0]
     header = os.path.join(args.destdir, basename + '.h')
@@ -31,6 +31,7 @@ def convert(fn, args):
         with open(proof_cc, 'w') as f:
             print('#include "proof_common.h"', file=f)
             print('#include "%s.h"' % basename, file=f)
+            print('#line %d "%s"' % (proof_line, fn), file=f)
             for line in proof:
                 print(line, file=f)
 
