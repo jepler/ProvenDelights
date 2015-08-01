@@ -1,12 +1,17 @@
 #ifndef HDELIGHT_PROOFS_COMMON_H
 #define HDELIGHT_PROOFS_COMMON_H
 
-#include <assert.h>
 #include <inttypes.h>
 
 #define BITS(T)  (sizeof(T) * 8)
 
+#ifdef __CPROVER__
 #define assume(x) __CPROVER_assume((x))
+#define assert(x) __CPROVER_assert((x), #x)
+#else
+#define assume(x)
+#include <assert.h>
+#endif
 
 int nondet_int();
 unsigned nondet_unsigned();
