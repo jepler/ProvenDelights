@@ -1,0 +1,10 @@
+== Power-of-2 Boundaries
+
+=== (intentionally left blank)
+(intentionally left blank)
+
+=== Rounding Up/Down to the Next Power of 2
+
+include::../proofs/flp2.txt[]
+
+include::../proofs/clp2.txt[]

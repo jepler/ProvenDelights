@@ -1,0 +1,34 @@
+==== Least power of 2 >= x
+This implementation of +clp2+ does not return the right result for 0
+or for values with no leading zero.
+
+.Implementation
+[source]
+----
+#include <nlz.h>
+template<class T>
+inline T clp2(T x) {
+    return T(1) << (BITS(T) - nlz(x-1));
+}
+----
+
+.Proof
+[source]
+----
+template<class T>
+void prove() {
+    T x = nondet<T>();
+    assume(x && nlz(x));
+    T y = clp2(x);
+    assert(y >= x);
+    assert(proof_popcnt(y) == 1);
+    T z = nondet_unsigned();
+    assume(z >= x && y > z);
+    assert(proof_popcnt(z) != 1);
+    return 0;
+}
+
+int main() {
+    prove<unsigned>();
+}
+----
