@@ -4,6 +4,8 @@
 #include <assert.h>
 #include <inttypes.h>
 
+#define BITS(T)  (sizeof(T) * 8)
+
 #define assume(x) __CPROVER_assume((x))
 
 int nondet_int();
