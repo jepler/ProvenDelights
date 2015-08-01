@@ -46,6 +46,7 @@ gen-include/%.h: proofs/%.txt preprocess.py
 .o/%_proof.txt: .o/%.cc
 	$(ECHO) PROVE $*
 	$(Q)$(CXX) $(CXXFLAGS) -MF .o/$*.d -M -MQ $@ $<
+	$(Q)$(CXX) $(CXXFLAGS) -fsyntax-only $<
 	$(Q)$(CBMC) $(CBMCFLAGS) $< > $@.err
 	$(Q)if grep -F "VERIFICATION FAILED" $@.err; then \
 		echo 1>&2 "$<: VERIFICATION FAILED -- see $@.err for details"; \
