@@ -1,0 +1,11 @@
+== Error correcting codes
+
+=== (no proofs in this section)
+{nbsp}
+
+=== (no proofs in this section)
+{nbsp}
+
+=== Software for SEC-DED on 32 Information Bits
+
+include::../proofs/secded.txt[]
