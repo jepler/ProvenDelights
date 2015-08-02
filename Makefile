@@ -32,7 +32,9 @@ HEADERS := $(patsubst proofs/%.txt, gen-include/%.h, $(FILES))
 -include $(DEPS)
 
 CBMC := cbmc
-CBMCFLAGS := -Iinclude -Igen-include
+CBMCFLAGS := -Iinclude -Igen-include \
+	--bounds-check --div-by-zero-check --pointer-check \
+	--signed-overflow-check
 
 CXX := g++
 CXXFLAGS := -Iinclude -Igen-include
