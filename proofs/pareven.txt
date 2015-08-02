@@ -4,7 +4,7 @@
 [source]
 ----
 inline uint8_t pareven(uint8_t x) {
-    return ((x * 0x10204081) & 0x888888ff) % 1920;
+    return (((unsigned)x * 0x10204081u) & 0x888888ffu) % 1920;
 }
 ----
 
