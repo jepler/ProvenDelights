@@ -1,0 +1,36 @@
+==== Integer log 10
+
+.Implementation
+[source]
+----
+#include "nlz.h"
+
+// "one table lookup, branch free" (figure 11-12)
+int ilog10(unsigned x) {
+    int y;
+    static unsigned table[11] = {0, 9, 99, 999, 9999,
+	99999, 999999, 9999999, 99999999, 999999999, 0xFFFFFFFF};
+    
+    y = (19*(31 - nlz(x))) >> 6;
+    return y + ((table[y+1]-x) >> 31);
+}
+----
+
+
+.Proof
+[source]
+----
+// "simple table search" (figure 11-7)
+int ilog10_simple(unsigned x) {
+    int i;
+    static unsigned table[11] = {0, 9, 99, 999, 9999,
+	99999, 999999, 9999999, 99999999, 999999999, 0xFFFFFFFF};
+    for(i = -1;; i++)
+	if(x <= table[i+1]) return i;
+}
+
+int main() {
+    unsigned u = 812487375; //  nondet_unsigned();
+    assert(ilog10_simple(u) == ilog10(u));
+}
+----

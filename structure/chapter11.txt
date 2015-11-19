@@ -1,0 +1,13 @@
+== Some Elementary Functions
+
+=== (no proofs in this section)
+{nbsp}
+
+=== (no proofs in this section)
+{nbsp}
+
+=== (no proofs in this section)
+{nbsp}
+
+=== Integer Logarithm
+include::../proofs/ilog10.txt[]
