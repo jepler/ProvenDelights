@@ -1,0 +1,44 @@
+==== Find leftmost 0-byte 
+
+.Implementation
+[source]
+----
+#include "nlz.h"
+inline int zbytel(unsigned x) {
+    unsigned y;
+    int n;
+    y = (x & 0x7f7f7f7f) + 0x7f7f7f7f;
+    y = ~(y | x | 0x7f7f7f7f);
+    n = nlz(y) >> 3;
+    return n;
+}
+
+inline int zbytel_nonlz(unsigned x) {
+    unsigned y;
+    int n;
+    y = (x & 0x7f7f7f7f) + 0x7f7f7f7f;
+    y = ~(y | x | 0x7f7f7f7f);
+    if(y == 0) return 4;
+    if(y > 0xffff) return (y >> 31) ^ 1;
+    return (y >> 15) ^ 3;
+}
+
+----
+
+.Proof
+[source]
+----
+int zbytel_ref(unsigned x) {
+    if((x >> 24) == 0) return 0;
+    if((x & 0x00ff0000) == 0) return 1;
+    if((x & 0x0000ff00) == 0) return 2;
+    if((x & 0x000000ff) == 0) return 3;
+    return 4;
+}
+
+int main() {
+    unsigned x = nondet_unsigned();
+    assert(zbytel(x) == zbytel_ref(x));
+    assert(zbytel_nonlz(x) == zbytel_ref(x));
+}
+----

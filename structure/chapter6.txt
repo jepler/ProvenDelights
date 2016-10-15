@@ -1,0 +1,5 @@
+== Searching Words
+
+=== Find First 0-Byte
+
+include::../proofs/zbyte1.txt[]
