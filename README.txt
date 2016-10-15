@@ -96,8 +96,8 @@ This work is licensed under a
 http://creativecommons.org/licenses/by-sa/4.0/[Creative Commons
 Attribution-ShareAlike 4.0 International License.]
 
-Additionally, all blocks of code marked as ".Implementation"
-are also covered under the following license:
+Additionally, all blocks of code marked as ".Implementation" are also covered
+under the following license (commonly known as the "zlib license"):
 
 This software is provided 'as-is', without any express or implied
 warranty. In no event will the authors be held liable for any damages
