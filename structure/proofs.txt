@@ -36,8 +36,8 @@ include::chapter6.txt[]
 == (no proofs in this chapter)
 {nbsp}
 
-== (no proofs in this chapter)
-{nbsp}
+<<<
+include::chapter10.txt[]
 
 <<<
 include::chapter11.txt[]

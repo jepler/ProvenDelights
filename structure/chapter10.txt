@@ -1,0 +1,26 @@
+== Integer Division By Constants
+
+=== (no proofs in this section)
+{nbsp}
+
+=== (no proofs in this section)
+{nbsp}
+
+=== (no proofs in this section)
+{nbsp}
+
+=== (no proofs in this section)
+{nbsp}
+
+=== (no proofs in this section)
+{nbsp}
+
+=== (no proofs in this section)
+{nbsp}
+
+=== (no proofs in this section)
+{nbsp}
+
+=== Unsigned Division by 3
+
+include::../proofs/unsigned_division_by_3.txt[]

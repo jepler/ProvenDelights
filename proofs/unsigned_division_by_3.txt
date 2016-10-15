@@ -1,0 +1,26 @@
+==== Unsigned division by 3
+
+.Implementation
+[source]
+----
+inline unsigned udiv3(uint32_t dividend, unsigned *remainder) {
+    uint32_t q = (dividend * UINT64_C(0xAAAAAAAB)) >> 33;
+    if(remainder) *remainder = dividend - q * 3;
+    return q;
+}
+----
+
+.Proof
+[source]
+----
+int main() {
+    unsigned n = nondet_unsigned();
+    unsigned r;
+    unsigned q = udiv3(n, &r);
+
+    assert(q * 3 + r == n);
+    // cbmc is not able to prove this, or anything else I could come up with to
+    // fully prove division-by-3, in a reasonable period of time
+    //assert(r < 3);
+}
+----
