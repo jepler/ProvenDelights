@@ -66,9 +66,9 @@ proofs: $(PROOFS)
 .PHONY: html
 html: doc/index.html
 
-DOCDEPS :=  structure/main.txt $(FILES) $(wildcard structure/*.txt) README.txt
+DOCDEPS :=  structure/proofs.txt $(FILES) $(wildcard structure/*.txt) README.txt
 
-doc/index.html: $(DOCDEPS) structure/main-docinfo.html
+doc/index.html: $(DOCDEPS) structure/proofs-docinfo.html
 	$(ECHO) "HTML " $@
 	$(Q)asciidoc -a docinfo= -n -b html5 -o $@ $<
 
