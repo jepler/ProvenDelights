@@ -1,4 +1,4 @@
-= Proven Delights -- proofs of algorithms from Hackers Delight (second edition)
+= Proven Delights
 Jeff Epler <jepler@gmail.com>
 v0.1, 2015-07
 :toc:
