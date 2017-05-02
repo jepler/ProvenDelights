@@ -4,7 +4,7 @@
 [source]
 ----
 inline unsigned udiv3(uint32_t dividend, unsigned *remainder) {
-    uint32_t q = (dividend * UINT64_C(0xAAAAAAAB)) >> 33;
+    uint32_t q = (dividend * (uint64_t)0xAAAAAAABu) >> 33;
     if(remainder) *remainder = dividend - q * 3;
     return q;
 }
