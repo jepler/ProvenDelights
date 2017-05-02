@@ -80,8 +80,7 @@ pdf: doc/proofs.pdf
 
 doc/proofs.pdf: $(DOCDEPS)
 	$(ECHO) "PDF  " $@
-	$(Q)a2x $(A2X_DASHV) --no-xmllint -f pdf --fop $<
-	$(Q)mv -f structure/proofs.pdf $@
+	$(Q)a2x $(A2X_DASHV) --no-xmllint -f pdf --dblatex-opts "-o $@ -P doc.publisher.show=0 -P latex.output.revhistory=0"  $<
 
 .PHONY: docs
 docs: html pdf
