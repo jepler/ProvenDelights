@@ -25,7 +25,7 @@ int ilog10_simple(unsigned x) {
     int i;
     static unsigned table[11] = {0, 9, 99, 999, 9999,
 	99999, 999999, 9999999, 99999999, 999999999, 0xFFFFFFFF};
-    for(i = -1;; i++)
+    for(i = -1; i < 11; i++)
 	if(x <= table[i+1]) return i;
 }
 
