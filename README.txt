@@ -69,11 +69,8 @@ In the case of a successful proof, the output of CBMC is left in
 +.o/**foo**_proof.txt.err+.
 
 === Contributing
-This project uses the Linux Kernel-style "Developer's Certificate of Origin",
-which certifies that the contribution may be made available under the project's
-license.
-
 Submit contributions with github pull requests to https://github.com/jepler/ProvenDelights[].
+Your contributions are subject to the https://help.github.com/articles/github-terms-of-service/#6-contributions-under-repository-license[GitHub Terms of Service] and must therefore be offered under the Repository License, stated below.
 
 Respect http://www.hackersdelight.org/permissions.htm[the license
 of the Hacker's Delight book].  This means that code may be
