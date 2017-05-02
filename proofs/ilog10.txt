@@ -31,7 +31,8 @@ int ilog10_simple(unsigned x) {
 }
 
 int main() {
-    unsigned u = 812487375; //  nondet_unsigned();
+    unsigned u = nondet_unsigned();
+    assume(u);
     assert(ilog10_simple(u) == ilog10(u));
 }
 ----
