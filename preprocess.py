@@ -30,10 +30,10 @@ def convert(fn, args):
     if not args.header_only:
         with open(proof_cc, 'w') as f:
             print('#include "proof_common.h"', file=f)
-            print('#line %d "%s"' % (imp_line, fn), file=f)
+            print('#line %d "%s"' % (imp_line+1, fn), file=f)
             for line in implementation:
                 print(line, file=f)
-            print('#line %d "%s"' % (proof_line, fn), file=f)
+            print('#line %d "%s"' % (proof_line+1, fn), file=f)
             for line in proof:
                 print(line, file=f)
 
