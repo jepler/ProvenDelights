@@ -83,7 +83,7 @@ inline int correct(unsigned pr, unsigned *ur) {
 
     // One error, and syn bits 5:0 tell where it is in ur.
     b = syn - 31 - (syn >> 5);   // Map syn to range 0 to 31.  
-    *ur = *ur ^ (1 << b);       // Correct the bit.
+    *ur = *ur ^ (1u << b);       // Correct the bit.
     return 1;
 }
 

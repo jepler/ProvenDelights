@@ -13,6 +13,6 @@ int main() {
     unsigned x = nondet_unsigned() | 1;
     unsigned y = nondet_unsigned() & 31;
     unsigned z = x << y;
-    assert(turn_off_rightmost_one(z) == (z ^ (1<<y)));
+    assert(turn_off_rightmost_one(z) == (z ^ (1u<<y)));
 }
 ----
