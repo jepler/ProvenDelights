@@ -35,8 +35,12 @@ int nlz_simple(T x) {
     x = x | (x >> 2);
     x = x | (x >> 4);
     x = x | (x >> 8);
-    x = x | (x >>16);
-    x = x | (x >>32);
+    if(sizeof(T) > 2) {
+        x = x | (x >>16);
+    }
+    if(sizeof(T) > 4) {
+        x = x | (x >>32);
+    }
     return proof_popcnt(~x);
 }
 
