@@ -45,14 +45,14 @@ This directory holds the generated documentation, "proofs.html" and
 "proofs.pdf"
 
 === Compatibility and software versions
-At this time, the oldest supported environment is Debian Wheezy.  In general, I
-plan that the oldest supported environment will be Debian oldstable.
+At this time, the oldest supported environment is Debian Buster.  Generally,
+the oldest supported environment will be Debian stable or oldstable.
 
 This means that the minimum versions of relevant software are:
 
-* http://asciidoc.org/[asciidoc 8.6.7]
-* http://www.cprover.org/cbmc/[cbmc 4.1]
-* http://python.org[python 3.2.3]
+* http://asciidoc.org/[asciidoc 8.6.10]
+* http://www.cprover.org/cbmc/[cbmc 5.10]
+* http://python.org[python 3.7.3]
 
 === Building
 The software is built by invoking +make+ in the top-level directory.
