@@ -11,9 +11,11 @@ endif
 ifeq ($(BUILD_VERBOSE),1)
 Q =
 A2X_DASHV := -v
+CATERR := cat
 else
 Q = @
 A2X_DASHV :=
+CATERR := false
 endif
 
 ifeq "$(findstring s,$(MAKEFLAGS))" ""
@@ -53,6 +55,7 @@ gen-include/%.h: proofs/%.txt preprocess.py
 	$(Q)$(CXX) $(CXXFLAGS) -fsyntax-only $<
 	$(Q)$(CBMC) $(CBMCFLAGS) $< > $@.err || true
 	$(Q)if ! grep -q -F "VERIFICATION SUCCESSFUL" $@.err; then \
+		$(CATERR) $@.err || \
 		echo 1>&2 "$<: VERIFICATION FAILED -- see $@.err for details"; \
 		exit 1; \
 	fi
@@ -103,6 +106,6 @@ prove-%: .o/%_proof.txt
 .PHONY: publish
 publish: docs
 	$(ECHO) "PUBLISH"
-	$(V)git branch -D gh-pages || true
-	$(V)./docimport.py | git fast-import --date-format=now
-	$(V)git push -f origin gh-pages
+	$(Q)git branch -D gh-pages || true
+	$(Q)./docimport.py | git fast-import --date-format=now
+	$(Q)git push -f origin gh-pages

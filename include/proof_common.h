@@ -35,6 +35,6 @@ inline int proof_popcnt(uint64_t u)
 }
 
 template<class T>
-T nondet() { return T(nondet_u64()); }
+T nondet() { return (T)(nondet_u64()); }
 
 #endif
