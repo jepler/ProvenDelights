@@ -23,7 +23,7 @@ jobs:
             - name: build
               run: |
                 make -O V=1 -j$(nproc)
-            - if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+            - if: github.event_name == 'push' && github.ref == 'refs/heads/main'
               name: publish
               run: |
                 git config user.email "jepler@gmail.com"
