@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="AsciiDoc 8.6.10">
+<title>Proven Delights</title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+.monospaced, code, pre {
+  font-family: "Courier New", Courier, monospace;
+  font-size: inherit;
+  color: navy;
+  padding: 0;
+  margin: 0;
+}
+pre {
+  white-space: pre-wrap;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; vertical-align: text-bottom; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel0, div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+div.unbreakable { page-break-inside: avoid; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+
+
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([1-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install(2);
+/*]]>*/
+</script>
+<html>
+<head>
+<style>
+body { max-width:  800px; left: auto; right: auto; }
+</style>
+</head>
+</html>
+</head>
+<body class="article">
+<div id="header">
+<h1>Proven Delights</h1>
+<span id="author">Jeff Epler</span><br>
+<span id="email" class="monospaced">&lt;<a href="mailto:jepler@gmail.com">jepler@gmail.com</a>&gt;</span><br>
+<div id="toc">
+  <div id="toctitle">Table of Contents</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph"><p>Other formats:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="proofs.pdf">PDF Version</a>
+</p>
+</li>
+<li>
+<p>
+<a href="https://github.com/jepler/ProvenDelights">Source Code</a>
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_proven_delights">1. Proven Delights</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>This project aims to include templated C++ implementations of many of the
+algorithms from <a href="http://www.hackersdelight.org/">Hacker&#8217;s Delight</a>, alongside
+<a href="http://www.cprover.org/cbmc/">CBMC</a>  proofs of the implementations.  While the
+implementations are typically trivial, that they work at all is often
+nonobvious.  Proofs can show that they work for all input values.</p></div>
+<div class="paragraph"><p>The fully built documentation of a recent version can always be found online:
+<a href="http://jepler.github.io/ProvenDelights/">http://jepler.github.io/ProvenDelights/</a></p></div>
+<div class="sect2">
+<h3 id="_structure">1.1. Structure</h3>
+<div class="sect3">
+<h4 id="_the_proofs_directory">1.1.1. The proofs/ directory</h4>
+<div class="paragraph"><p>Each file in proofs/ is an asciidoc document.  It must contain a code section
+lead off by ".Implementation" which implements the function as a C++ template
+or inline; and a code section lead off by ".Proof" which implements a CBMC
+proof of the function&#8217;s properties as given in Hacker&#8217;s Delight.</p></div>
+<div class="paragraph"><p>Where an implementation or proof needs to use the implementation of another
+function, it can #include the definition.  For example, to use the
+implementation of <span class="monospaced">turn_off_rightmost_ones</span>, simply</p></div>
+<div class="listingblock">
+<div class="content monospaced">
+<pre>#include "turn_off_rightmost_ones.h"</pre>
+</div></div>
+</div>
+<div class="sect3">
+<h4 id="_the_structure_directory">1.1.2. The structure/ directory</h4>
+<div class="paragraph"><p>The asciidoc files in this directory create a structure which is intended to
+mirror the chapter and section numbering of Hacker&#8217;s Delight (second edition).
+To this end, it will initially contain many empty and placeholder sections.</p></div>
+<div class="paragraph"><p>Where appropriate, chapter and section titles the same as those in
+Hacker&#8217;s Delight are used for the purpose of identifying the
+correspondence between the book and this body of proofs.</p></div>
+</div>
+<div class="sect3">
+<h4 id="_the_include_directory">1.1.3. The include/ directory</h4>
+<div class="paragraph"><p>This directory holds utility code to be used in proofs, such as <span class="monospaced">assume</span>,
+<span class="monospaced">assert</span>, and <span class="monospaced">proof_popcnt</span>.</p></div>
+</div>
+<div class="sect3">
+<h4 id="_the_gen_include_directory">1.1.4. The gen-include/ directory</h4>
+<div class="paragraph"><p>This directory holds the generated header files for each function
+implemented.</p></div>
+</div>
+<div class="sect3">
+<h4 id="_the_docs_directory">1.1.5. The docs/ directory</h4>
+<div class="paragraph"><p>This directory holds the generated documentation, "proofs.html" and
+"proofs.pdf"</p></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_compatibility_and_software_versions">1.2. Compatibility and software versions</h3>
+<div class="paragraph"><p>At this time, the oldest supported environment is Debian Buster.  Generally,
+the oldest supported environment will be Debian stable or oldstable.</p></div>
+<div class="paragraph"><p>This means that the minimum versions of relevant software are:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://asciidoc.org/">asciidoc 8.6.10</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.cprover.org/cbmc/">cbmc 5.10</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://python.org">python 3.7.3</a>
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_building">1.3. Building</h3>
+<div class="paragraph"><p>The software is built by invoking <span class="monospaced">make</span> in the top-level directory.
+By default, all functions are proven and all forms of documentation are
+built.  Parallelism can be used safely (<span class="monospaced">make -j4</span> for a 4-thread system, for
+instance)</p></div>
+<div class="paragraph"><p>Other targets include <span class="monospaced">docs</span>, <span class="monospaced">pdf</span>, and <span class="monospaced">html</span> to build just (one form of)
+the documentation; <span class="monospaced">proofs</span> to just build the proofs, and <span class="monospaced">prove-<strong>foo</strong></span>
+to just prove <strong>foo</strong>.</p></div>
+<div class="paragraph"><p>In the case of a successful proof, the output of CBMC is left in
+<span class="monospaced">.o/<strong>foo</strong>_proof.txt</span>.  In the case of a failed proof, it is left in
+<span class="monospaced">.o/<strong>foo</strong>_proof.txt.err</span>.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_contributing">1.4. Contributing</h3>
+<div class="paragraph"><p>Submit contributions with github pull requests to <a href="https://github.com/jepler/ProvenDelights">https://github.com/jepler/ProvenDelights</a>.
+Your contributions are subject to the <a href="https://help.github.com/articles/github-terms-of-service/#6-contributions-under-repository-license">GitHub Terms of Service</a> and must therefore be offered under the Repository License, stated below.</p></div>
+<div class="paragraph"><p>Respect <a href="http://www.hackersdelight.org/permissions.htm">the license
+of the Hacker&#8217;s Delight book</a>.  This means that code may be
+incorporated from the book, but prose may not.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_style">1.5. Style</h3>
+<div class="paragraph"><p>For prose, use professional English writing.</p></div>
+<div class="paragraph"><p>For code, use basic C++; make functions templates where appropriate,
+and inlines where inappropriate.  Use the general coding style of
+Hacker&#8217;s Delight:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+4-space indentation
+</p>
+</li>
+<li>
+<p>
+no literal tab characters
+</p>
+</li>
+<li>
+<p>
+open curly braces don&#8217;t get their own line
+</p>
+</li>
+<li>
+<p>
+include whitespace in expressions where it improves readability
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_license">1.6. License</h3>
+<div class="paragraph"><p>This work is licensed under a
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+Attribution-ShareAlike 4.0 International License.</a></p></div>
+<div class="paragraph"><p>Additionally, all blocks of code marked as ".Implementation" are also covered
+under the following license (commonly known as the "zlib license"):</p></div>
+<div class="paragraph"><p>This software is provided <em>as-is</em>, without any express or implied
+warranty. In no event will the authors be held liable for any damages
+arising from the use of this software.</p></div>
+<div class="paragraph"><p>Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+The origin of this software must not be misrepresented; you must not
+   claim that you wrote the original software. If you use this software
+   in a product, an acknowledgement in the product documentation would be
+   appreciated but is not required.
+</p>
+</li>
+<li>
+<p>
+Altered source versions must be plainly marked as such, and must not be
+   misrepresented as being the original software.
+</p>
+</li>
+<li>
+<p>
+This notice may not be removed or altered from any source distribution.
+</p>
+</li>
+</ol></div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_basics">2. Basics</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_manipulating_rightmost_bits">2.1. Manipulating Rightmost Bits</h3>
+<div class="sect3">
+<h4 id="_turn_off_rightmost_one">2.1.1. Turn off rightmost one</h4>
+<div class="listingblock">
+<div class="title">Implementation</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">template</span></span><span style="color: #990000">&lt;</span><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">T</span><span style="color: #990000">&gt;</span> <span style="color: #008080">T</span> <span style="font-weight: bold"><span style="color: #000000">turn_off_rightmost_one</span></span><span style="color: #990000">(</span><span style="color: #008080">T</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span> <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> x <span style="color: #990000">&amp;</span> <span style="color: #990000">(</span>x <span style="color: #990000">-</span> <span style="color: #993399">1</span><span style="color: #990000">);</span> <span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="listingblock">
+<div class="title">Proof</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> x <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">()</span> <span style="color: #990000">|</span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
+    <span style="color: #009900">unsigned</span> y <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">()</span> <span style="color: #990000">&amp;</span> <span style="color: #993399">31</span><span style="color: #990000">;</span>
+    <span style="color: #009900">unsigned</span> z <span style="color: #990000">=</span> x <span style="color: #990000">&lt;&lt;</span> y<span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">turn_off_rightmost_one</span></span><span style="color: #990000">(</span>z<span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="color: #990000">(</span>z <span style="color: #990000">^</span> <span style="color: #990000">(</span><span style="color: #993399">1u</span><span style="color: #990000">&lt;&lt;</span>y<span style="color: #990000">)));</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+<div class="sect3">
+<h4 id="_next_with_same_popcnt">2.1.2. Next with same popcnt</h4>
+<div class="paragraph"><p>Note that <span class="monospaced">next_with_same_popcnt</span> may not be called with 0 (this leads
+to division by zero).</p></div>
+<div class="paragraph"><p>When it is called with the largest number of a given popcnt, I don&#8217;t understand
+the interpretation of the return value, so I don&#8217;t assert anything about that
+case.</p></div>
+<div class="listingblock">
+<div class="title">Implementation</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">template</span></span><span style="color: #990000">&lt;</span><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">T</span><span style="color: #990000">&gt;</span> <span style="color: #008080">T</span> <span style="font-weight: bold"><span style="color: #000000">next_with_same_popcnt</span></span><span style="color: #990000">(</span><span style="color: #008080">T</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="color: #008080">T</span> s <span style="color: #990000">=</span> x <span style="color: #990000">&amp;</span> <span style="color: #990000">-</span>x<span style="color: #990000">;</span>
+    <span style="color: #008080">T</span> r <span style="color: #990000">=</span> s <span style="color: #990000">+</span> x<span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> r <span style="color: #990000">|</span> <span style="color: #990000">(((</span>x <span style="color: #990000">^</span> r<span style="color: #990000">)</span> <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">2</span><span style="color: #990000">)</span> <span style="color: #990000">/</span> s<span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="listingblock">
+<div class="title">Proof</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> u <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="font-weight: bold"><span style="color: #000000">assume</span></span><span style="color: #990000">(</span>u <span style="color: #990000">!=</span> <span style="color: #993399">0</span><span style="color: #990000">);</span>
+    <span style="color: #009900">unsigned</span> v <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">next_with_same_popcnt</span></span><span style="color: #990000">(</span>u<span style="color: #990000">);</span>
+    <span style="color: #009900">unsigned</span> w <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+
+    <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">(</span>v <span style="color: #990000">&gt;</span> u<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #000000">assume</span></span><span style="color: #990000">(</span>w <span style="color: #990000">&gt;</span> v <span style="color: #990000">&amp;&amp;</span> w <span style="color: #990000">&lt;</span> u<span style="color: #990000">);</span>
+        <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">proof_popcnt</span></span><span style="color: #990000">(</span>u<span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #000000">proof_popcnt</span></span><span style="color: #990000">(</span>v<span style="color: #990000">));</span>
+        <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">proof_popcnt</span></span><span style="color: #990000">(</span>u<span style="color: #990000">)</span> <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #000000">proof_popcnt</span></span><span style="color: #990000">(</span>w<span style="color: #990000">));</span>
+    <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_no_proofs_in_this_section">2.2. (no proofs in this section)</h3>
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+<div class="sect2">
+<h3 id="_no_proofs_in_this_section_2">2.3. (no proofs in this section)</h3>
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+<div class="sect2">
+<h3 id="_no_proofs_in_this_section_3">2.4. (no proofs in this section)</h3>
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+<div class="sect2">
+<h3 id="_average_of_two_integers">2.5. Average of two integers</h3>
+<div class="sect3">
+<h4 id="_average_rounded_down">2.5.1. Average, rounded down</h4>
+<div class="listingblock">
+<div class="title">Implementation</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">template</span></span><span style="color: #990000">&lt;</span><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">T</span><span style="color: #990000">&gt;</span> <span style="color: #008080">T</span> <span style="font-weight: bold"><span style="color: #000000">average_round_down</span></span><span style="color: #990000">(</span><span style="color: #008080">T</span> x<span style="color: #990000">,</span> <span style="color: #008080">T</span> y<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #990000">(</span>x <span style="color: #990000">&amp;</span> y<span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #990000">((</span>x <span style="color: #990000">^</span> y<span style="color: #990000">)</span> <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">1</span><span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="listingblock">
+<div class="title">Proof</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> x <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="color: #009900">unsigned</span> y <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="color: #009900">unsigned</span> z <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">average_round_down</span></span><span style="color: #990000">(</span>x<span style="color: #990000">,</span> y<span style="color: #990000">);</span>
+    <span style="color: #009900">unsigned</span> w <span style="color: #990000">=</span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">uint64_t</span></span><span style="color: #990000">(</span>x<span style="color: #990000">)</span> <span style="color: #990000">+</span> y<span style="color: #990000">)</span> <span style="color: #990000">/</span> <span style="color: #993399">2</span><span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span>z <span style="color: #990000">==</span> w<span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+<div class="sect3">
+<h4 id="_average_rounded_up">2.5.2. Average, rounded up</h4>
+<div class="listingblock">
+<div class="title">Implementation</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">template</span></span><span style="color: #990000">&lt;</span><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">T</span><span style="color: #990000">&gt;</span> <span style="color: #008080">T</span> <span style="font-weight: bold"><span style="color: #000000">average_round_up</span></span><span style="color: #990000">(</span><span style="color: #008080">T</span> x<span style="color: #990000">,</span> <span style="color: #008080">T</span> y<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #990000">(</span>x <span style="color: #990000">|</span> y<span style="color: #990000">)</span> <span style="color: #990000">-</span> <span style="color: #990000">((</span>x <span style="color: #990000">^</span> y<span style="color: #990000">)</span> <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">1</span><span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="listingblock">
+<div class="title">Proof</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> x <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="color: #009900">unsigned</span> y <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="color: #009900">unsigned</span> z <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">average_round_up</span></span><span style="color: #990000">(</span>x<span style="color: #990000">,</span> y<span style="color: #990000">);</span>
+    <span style="color: #009900">unsigned</span> w <span style="color: #990000">=</span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">uint64_t</span></span><span style="color: #990000">(</span>x<span style="color: #990000">)</span> <span style="color: #990000">+</span> y <span style="color: #990000">+</span> <span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #990000">/</span> <span style="color: #993399">2</span><span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span>z <span style="color: #990000">==</span> w<span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_power_of_2_boundaries">3. Power-of-2 Boundaries</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_no_proofs_in_this_section_4">3.1. (No proofs in this section)</h3>
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+<div class="sect2">
+<h3 id="_rounding_up_down_to_the_next_power_of_2">3.2. Rounding Up/Down to the Next Power of 2</h3>
+<div class="sect3">
+<h4 id="_greatest_power_of_2_lt_x">3.2.1. Greatest power of 2 &lt;= x</h4>
+<div class="listingblock">
+<div class="title">Implementation</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #000080">#include</span></span> <span style="color: #FF0000">&lt;nlz.h&gt;</span>
+<span style="font-weight: bold"><span style="color: #0000FF">template</span></span><span style="color: #990000">&lt;</span><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">T</span><span style="color: #990000">&gt;</span>
+<span style="font-weight: bold"><span style="color: #0000FF">inline</span></span> <span style="color: #008080">T</span> <span style="font-weight: bold"><span style="color: #000000">flp2</span></span><span style="color: #990000">(</span><span style="color: #008080">T</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #000000">T</span></span><span style="color: #990000">(</span><span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #990000">&lt;&lt;</span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">BITS</span></span><span style="color: #990000">(</span>T<span style="color: #990000">)</span> <span style="color: #990000">-</span> <span style="font-weight: bold"><span style="color: #000000">nlz</span></span><span style="color: #990000">(</span>x<span style="color: #990000">)</span> <span style="color: #990000">-</span> <span style="color: #993399">1</span><span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="listingblock">
+<div class="title">Proof</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">template</span></span><span style="color: #990000">&lt;</span><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">T</span><span style="color: #990000">&gt;</span>
+<span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">prove</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="color: #008080">T</span> x <span style="color: #990000">=</span> nondet<span style="color: #990000">&lt;</span>T<span style="color: #990000">&gt;();</span>
+    <span style="font-weight: bold"><span style="color: #000000">assume</span></span><span style="color: #990000">(</span>x<span style="color: #990000">);</span>
+    <span style="color: #008080">T</span> y <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">flp2</span></span><span style="color: #990000">(</span>x<span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span>y <span style="color: #990000">&lt;=</span> x<span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">proof_popcnt</span></span><span style="color: #990000">(</span>y<span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="color: #993399">1</span><span style="color: #990000">);</span>
+    <span style="color: #008080">T</span> z <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="font-weight: bold"><span style="color: #000000">assume</span></span><span style="color: #990000">(</span>z <span style="color: #990000">&lt;=</span> x <span style="color: #990000">&amp;&amp;</span> y <span style="color: #990000">&lt;</span> z<span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">proof_popcnt</span></span><span style="color: #990000">(</span>z<span style="color: #990000">)</span> <span style="color: #990000">!=</span> <span style="color: #993399">1</span><span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span>
+
+<span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    prove<span style="color: #990000">&lt;</span><span style="color: #009900">unsigned</span><span style="color: #990000">&gt;();</span>
+    prove<span style="color: #990000">&lt;</span>uint64_t<span style="color: #990000">&gt;();</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+<div class="sect3">
+<h4 id="_least_power_of_2_gt_x">3.2.2. Least power of 2 &gt;= x</h4>
+<div class="paragraph"><p>This implementation of <span class="monospaced">clp2</span> does not return the right result for 0
+or for values with no leading zero.</p></div>
+<div class="listingblock">
+<div class="title">Implementation</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #000080">#include</span></span> <span style="color: #FF0000">&lt;nlz.h&gt;</span>
+<span style="font-weight: bold"><span style="color: #0000FF">template</span></span><span style="color: #990000">&lt;</span><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">T</span><span style="color: #990000">&gt;</span>
+<span style="font-weight: bold"><span style="color: #0000FF">inline</span></span> <span style="color: #008080">T</span> <span style="font-weight: bold"><span style="color: #000000">clp2</span></span><span style="color: #990000">(</span><span style="color: #008080">T</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #000000">T</span></span><span style="color: #990000">(</span><span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #990000">&lt;&lt;</span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">BITS</span></span><span style="color: #990000">(</span>T<span style="color: #990000">)</span> <span style="color: #990000">-</span> <span style="font-weight: bold"><span style="color: #000000">nlz</span></span><span style="color: #990000">(</span>x<span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">));</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="listingblock">
+<div class="title">Proof</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">template</span></span><span style="color: #990000">&lt;</span><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">T</span><span style="color: #990000">&gt;</span>
+<span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">prove</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="color: #008080">T</span> x <span style="color: #990000">=</span> nondet<span style="color: #990000">&lt;</span>T<span style="color: #990000">&gt;();</span>
+    <span style="font-weight: bold"><span style="color: #000000">assume</span></span><span style="color: #990000">(</span>x <span style="color: #990000">&amp;&amp;</span> <span style="font-weight: bold"><span style="color: #000000">nlz</span></span><span style="color: #990000">(</span>x<span style="color: #990000">));</span>
+    <span style="color: #008080">T</span> y <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">clp2</span></span><span style="color: #990000">(</span>x<span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span>y <span style="color: #990000">&gt;=</span> x<span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">proof_popcnt</span></span><span style="color: #990000">(</span>y<span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="color: #993399">1</span><span style="color: #990000">);</span>
+    <span style="color: #008080">T</span> z <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="font-weight: bold"><span style="color: #000000">assume</span></span><span style="color: #990000">(</span>z <span style="color: #990000">&gt;=</span> x <span style="color: #990000">&amp;&amp;</span> y <span style="color: #990000">&gt;</span> z<span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">proof_popcnt</span></span><span style="color: #990000">(</span>z<span style="color: #990000">)</span> <span style="color: #990000">!=</span> <span style="color: #993399">1</span><span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span>
+
+<span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    prove<span style="color: #990000">&lt;</span><span style="color: #009900">unsigned</span><span style="color: #990000">&gt;();</span>
+    prove<span style="color: #990000">&lt;</span>uint64_t<span style="color: #990000">&gt;();</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_no_proofs_in_this_chapter">4. (no proofs in this chapter)</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>&#160;</p></div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_counting_bits">5. Counting Bits</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_counting_1_bits">5.1. Counting 1-bits</h3>
+<div class="sect3">
+<h4 id="_counting_1_bits_in_a_word">5.1.1. Counting 1-bits in a word</h4>
+<div class="listingblock">
+<div class="title">Implementation</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">pop</span></span><span style="color: #990000">(</span><span style="color: #009900">unsigned</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+   x <span style="color: #990000">=</span> x <span style="color: #990000">-</span> <span style="color: #990000">((</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #990000">&amp;</span> <span style="color: #993399">0x55555555</span><span style="color: #990000">);</span>
+   x <span style="color: #990000">=</span> <span style="color: #990000">(</span>x <span style="color: #990000">&amp;</span> <span style="color: #993399">0x33333333</span><span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #990000">((</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">2</span><span style="color: #990000">)</span> <span style="color: #990000">&amp;</span> <span style="color: #993399">0x33333333</span><span style="color: #990000">);</span>
+   x <span style="color: #990000">=</span> <span style="color: #990000">(</span>x <span style="color: #990000">+</span> <span style="color: #990000">(</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">4</span><span style="color: #990000">))</span> <span style="color: #990000">&amp;</span> <span style="color: #993399">0x0F0F0F0F</span><span style="color: #990000">;</span>
+   x <span style="color: #990000">=</span> x <span style="color: #990000">+</span> <span style="color: #990000">(</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">8</span><span style="color: #990000">);</span>
+   x <span style="color: #990000">=</span> x <span style="color: #990000">+</span> <span style="color: #990000">(</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">16</span><span style="color: #990000">);</span>
+   <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> x <span style="color: #990000">&amp;</span> <span style="color: #993399">0x0000003F</span><span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="listingblock">
+<div class="title">Proof</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> u <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="color: #009900">int</span> i <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">pop</span></span><span style="color: #990000">(</span>u<span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span>i <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #000000">proof_popcnt</span></span><span style="color: #990000">(</span>u<span style="color: #990000">));</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_parity">5.2. Parity</h3>
+<div class="sect3">
+<h4 id="_compute_parity">5.2.1. Compute Parity</h4>
+<div class="listingblock">
+<div class="title">Implementation</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">inline</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">parity</span></span><span style="color: #990000">(</span><span style="color: #008080">uint8_t</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    x <span style="color: #990000">^=</span> <span style="color: #990000">(</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">4</span><span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #990000">(</span><span style="color: #993399">0x6996</span> <span style="color: #990000">&gt;&gt;</span> <span style="color: #990000">(</span>x <span style="color: #990000">&amp;</span> <span style="color: #993399">0xf</span><span style="color: #990000">))</span> <span style="color: #990000">&amp;</span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">inline</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">parity</span></span><span style="color: #990000">(</span><span style="color: #008080">uint16_t</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    x <span style="color: #990000">^=</span> <span style="color: #990000">(</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">8</span><span style="color: #990000">);</span>
+    x <span style="color: #990000">^=</span> <span style="color: #990000">(</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">4</span><span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #990000">(</span><span style="color: #993399">0x6996</span> <span style="color: #990000">&gt;&gt;</span> <span style="color: #990000">(</span>x <span style="color: #990000">&amp;</span> <span style="color: #993399">0xf</span><span style="color: #990000">))</span> <span style="color: #990000">&amp;</span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">inline</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">parity</span></span><span style="color: #990000">(</span><span style="color: #008080">uint32_t</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    x <span style="color: #990000">^=</span> <span style="color: #990000">(</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">16</span><span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #000000">parity</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">uint16_t</span></span><span style="color: #990000">(</span>x<span style="color: #990000">));</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">inline</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">parity</span></span><span style="color: #990000">(</span><span style="color: #008080">uint64_t</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    x <span style="color: #990000">^=</span> <span style="color: #990000">(</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">32</span><span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #000000">parity</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">uint32_t</span></span><span style="color: #990000">(</span>x<span style="color: #990000">));</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="paragraph"><p>The proof for 64-bit inputs takes an infeasibly long time and consequently
+is disabled.</p></div>
+<div class="listingblock">
+<div class="title">Proof</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">template</span></span><span style="color: #990000">&lt;</span><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">T</span><span style="color: #990000">&gt;</span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">prove</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="color: #008080">T</span> x <span style="color: #990000">=</span> nondet<span style="color: #990000">&lt;</span>T<span style="color: #990000">&gt;();</span>
+    <span style="color: #009900">int</span> px <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">parity</span></span><span style="color: #990000">(</span>x<span style="color: #990000">);</span>
+    <span style="color: #009900">int</span> pc <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">proof_popcnt</span></span><span style="color: #990000">(</span>x<span style="color: #990000">)</span> <span style="color: #990000">&amp;</span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span>pc <span style="color: #990000">==</span> px<span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span>
+
+<span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    prove<span style="color: #990000">&lt;</span>uint8_t<span style="color: #990000">&gt;();</span>
+    prove<span style="color: #990000">&lt;</span>uint16_t<span style="color: #990000">&gt;();</span>
+    prove<span style="color: #990000">&lt;</span>uint32_t<span style="color: #990000">&gt;();</span>
+<span style="font-style: italic"><span style="color: #9A1900">//    prove&lt;uint64_t&gt;();</span></span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+<div class="sect3">
+<h4 id="_add_even_parity_in_msb">5.2.2. Add Even Parity in MSB</h4>
+<div class="listingblock">
+<div class="title">Implementation</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">inline</span></span> <span style="color: #008080">uint8_t</span> <span style="font-weight: bold"><span style="color: #000000">pareven</span></span><span style="color: #990000">(</span><span style="color: #008080">uint8_t</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #990000">(((</span><span style="color: #009900">unsigned</span><span style="color: #990000">)</span>x <span style="color: #990000">*</span> <span style="color: #993399">0x10204081u</span><span style="color: #990000">)</span> <span style="color: #990000">&amp;</span> <span style="color: #993399">0x888888ffu</span><span style="color: #990000">)</span> <span style="color: #990000">%</span> <span style="color: #993399">1920</span><span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="listingblock">
+<div class="title">Proof</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #000080">#include</span></span> <span style="color: #FF0000">&lt;parity.h&gt;</span>
+
+<span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="color: #008080">uint8_t</span> x <span style="color: #990000">=</span> nondet<span style="color: #990000">&lt;</span>uint8_t<span style="color: #990000">&gt;()</span> <span style="color: #990000">&amp;</span> <span style="color: #993399">0x7f</span><span style="color: #990000">;</span>
+    <span style="color: #008080">uint8_t</span> y <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">pareven</span></span><span style="color: #990000">(</span>x<span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">((</span>y <span style="color: #990000">&amp;</span> <span style="color: #993399">0x7f</span><span style="color: #990000">)</span> <span style="color: #990000">==</span> x<span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(!</span><span style="font-weight: bold"><span style="color: #000000">parity</span></span><span style="color: #990000">(</span>y<span style="color: #990000">));</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+<div class="sect3">
+<h4 id="_add_odd_parity_in_msb">5.2.3. Add Odd Parity in MSB</h4>
+<div class="listingblock">
+<div class="title">Implementation</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">inline</span></span> <span style="color: #008080">uint8_t</span> <span style="font-weight: bold"><span style="color: #000000">parodd</span></span><span style="color: #990000">(</span><span style="color: #008080">uint8_t</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #990000">(((</span><span style="color: #009900">unsigned</span><span style="color: #990000">)</span>x <span style="color: #990000">*</span> <span style="color: #993399">0x204081u</span><span style="color: #990000">)</span> <span style="color: #990000">|</span> <span style="color: #993399">0x3db6db00u</span><span style="color: #990000">)</span> <span style="color: #990000">%</span> <span style="color: #993399">1152</span><span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="listingblock">
+<div class="title">Proof</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #000080">#include</span></span> <span style="color: #FF0000">&lt;parity.h&gt;</span>
+
+<span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="color: #008080">uint8_t</span> x <span style="color: #990000">=</span> nondet<span style="color: #990000">&lt;</span>uint8_t<span style="color: #990000">&gt;()</span> <span style="color: #990000">&amp;</span> <span style="color: #993399">0x7f</span><span style="color: #990000">;</span>
+    <span style="color: #008080">uint8_t</span> y <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">parodd</span></span><span style="color: #990000">(</span>x<span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">((</span>y <span style="color: #990000">&amp;</span> <span style="color: #993399">0x7f</span><span style="color: #990000">)</span> <span style="color: #990000">==</span> x<span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">parity</span></span><span style="color: #990000">(</span>y<span style="color: #990000">));</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_counting_leading_0s">5.3. Counting Leading 0s</h3>
+<div class="sect3">
+<h4 id="_number_of_leading_zeroes">5.3.1. Number of leading zeroes</h4>
+<div class="listingblock">
+<div class="title">Implementation</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">inline</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">nlz</span></span><span style="color: #990000">(</span><span style="color: #009900">unsigned</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">char</span> table<span style="color: #990000">[</span><span style="color: #993399">64</span><span style="color: #990000">]</span> <span style="color: #990000">=</span>
+    <span style="color: #FF0000">{</span><span style="color: #993399">32</span><span style="color: #990000">,</span><span style="color: #993399">31</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span><span style="color: #993399">16</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span><span style="color: #993399">30</span><span style="color: #990000">,</span> <span style="color: #993399">3</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span>  <span style="color: #993399">15</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span><span style="color: #993399">29</span><span style="color: #990000">,</span><span style="color: #993399">10</span><span style="color: #990000">,</span> <span style="color: #993399">2</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span>
+     <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span><span style="color: #993399">12</span><span style="color: #990000">,</span><span style="color: #993399">14</span><span style="color: #990000">,</span><span style="color: #993399">21</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span><span style="color: #993399">19</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span>  <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">,</span><span style="color: #993399">28</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span><span style="color: #993399">25</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span> <span style="color: #993399">9</span><span style="color: #990000">,</span> <span style="color: #993399">1</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span>
+     <span style="color: #993399">17</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span> <span style="color: #993399">4</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span><span style="color: #993399">11</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span>  <span style="color: #993399">13</span><span style="color: #990000">,</span><span style="color: #993399">22</span><span style="color: #990000">,</span><span style="color: #993399">20</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span><span style="color: #993399">26</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span><span style="color: #993399">18</span><span style="color: #990000">,</span>
+      <span style="color: #993399">5</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span><span style="color: #993399">23</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span><span style="color: #993399">27</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span> <span style="color: #993399">6</span><span style="color: #990000">,</span>  <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">,</span><span style="color: #993399">24</span><span style="color: #990000">,</span> <span style="color: #993399">7</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span> <span style="color: #993399">8</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #990000">,</span> <span style="color: #993399">0</span><span style="color: #990000">,-</span><span style="color: #993399">1</span><span style="color: #FF0000">}</span><span style="color: #990000">;</span>
+    x <span style="color: #990000">=</span> x <span style="color: #990000">|</span> <span style="color: #990000">(</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">1</span><span style="color: #990000">);</span>     <span style="font-style: italic"><span style="color: #9A1900">// Propagate leftmost</span></span>
+    x <span style="color: #990000">=</span> x <span style="color: #990000">|</span> <span style="color: #990000">(</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">2</span><span style="color: #990000">);</span>     <span style="font-style: italic"><span style="color: #9A1900">// 1-bit to the right.</span></span>
+    x <span style="color: #990000">=</span> x <span style="color: #990000">|</span> <span style="color: #990000">(</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">4</span><span style="color: #990000">);</span>
+    x <span style="color: #990000">=</span> x <span style="color: #990000">|</span> <span style="color: #990000">(</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">8</span><span style="color: #990000">);</span>
+    x <span style="color: #990000">=</span> x <span style="color: #990000">|</span> <span style="color: #990000">(</span>x <span style="color: #990000">&gt;&gt;</span><span style="color: #993399">16</span><span style="color: #990000">);</span>
+    x <span style="color: #990000">=</span> x<span style="color: #990000">*</span><span style="color: #993399">0x06EB14F9</span><span style="color: #990000">;</span>     <span style="font-style: italic"><span style="color: #9A1900">// Multiplier is 7*255**3.</span></span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> table<span style="color: #990000">[</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">26</span><span style="color: #990000">];</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">inline</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">nlz</span></span><span style="color: #990000">(</span><span style="color: #008080">uint64_t</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> i <span style="color: #990000">=</span> x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">32</span><span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">(</span>i<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #000000">nlz</span></span><span style="color: #990000">(</span>i<span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #993399">32</span><span style="color: #990000">+</span><span style="font-weight: bold"><span style="color: #000000">nlz</span></span><span style="color: #990000">(</span><span style="color: #009900">unsigned</span><span style="color: #990000">(</span>x<span style="color: #990000">));</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="listingblock">
+<div class="title">Proof</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #000080">#include</span></span> <span style="color: #FF0000">&lt;pop.h&gt;</span>
+<span style="font-weight: bold"><span style="color: #0000FF">template</span></span><span style="color: #990000">&lt;</span><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">T</span><span style="color: #990000">&gt;</span>
+<span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">nlz_simple</span></span><span style="color: #990000">(</span><span style="color: #008080">T</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    x <span style="color: #990000">=</span> x <span style="color: #990000">|</span> <span style="color: #990000">(</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">1</span><span style="color: #990000">);</span>
+    x <span style="color: #990000">=</span> x <span style="color: #990000">|</span> <span style="color: #990000">(</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">2</span><span style="color: #990000">);</span>
+    x <span style="color: #990000">=</span> x <span style="color: #990000">|</span> <span style="color: #990000">(</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">4</span><span style="color: #990000">);</span>
+    x <span style="color: #990000">=</span> x <span style="color: #990000">|</span> <span style="color: #990000">(</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">8</span><span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">sizeof</span></span><span style="color: #990000">(</span>T<span style="color: #990000">)</span> <span style="color: #990000">&gt;</span> <span style="color: #993399">2</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        x <span style="color: #990000">=</span> x <span style="color: #990000">|</span> <span style="color: #990000">(</span>x <span style="color: #990000">&gt;&gt;</span><span style="color: #993399">16</span><span style="color: #990000">);</span>
+    <span style="color: #FF0000">}</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">sizeof</span></span><span style="color: #990000">(</span>T<span style="color: #990000">)</span> <span style="color: #990000">&gt;</span> <span style="color: #993399">4</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        x <span style="color: #990000">=</span> x <span style="color: #990000">|</span> <span style="color: #990000">(</span>x <span style="color: #990000">&gt;&gt;</span><span style="color: #993399">32</span><span style="color: #990000">);</span>
+    <span style="color: #FF0000">}</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #000000">proof_popcnt</span></span><span style="color: #990000">(~</span>x<span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">template</span></span><span style="color: #990000">&lt;</span><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">T</span><span style="color: #990000">&gt;</span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">prove</span></span><span style="color: #990000">(</span><span style="color: #008080">T</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">nlz</span></span><span style="color: #990000">(</span>x<span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #000000">nlz_simple</span></span><span style="color: #990000">(</span>x<span style="color: #990000">));</span>
+<span style="color: #FF0000">}</span>
+
+<span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="font-weight: bold"><span style="color: #000000">prove</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">());</span>
+    <span style="font-weight: bold"><span style="color: #000000">prove</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">nondet_u64</span></span><span style="color: #990000">());</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_searching_words">6. Searching Words</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_find_first_0_byte">6.1. Find First 0-Byte</h3>
+<div class="sect3">
+<h4 id="_find_leftmost_0_byte">6.1.1. Find leftmost 0-byte</h4>
+<div class="listingblock">
+<div class="title">Implementation</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #000080">#include</span></span> <span style="color: #FF0000">"nlz.h"</span>
+<span style="font-weight: bold"><span style="color: #0000FF">inline</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">zbytel</span></span><span style="color: #990000">(</span><span style="color: #009900">unsigned</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> y<span style="color: #990000">;</span>
+    <span style="color: #009900">int</span> n<span style="color: #990000">;</span>
+    y <span style="color: #990000">=</span> <span style="color: #990000">(</span>x <span style="color: #990000">&amp;</span> <span style="color: #993399">0x7f7f7f7f</span><span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #993399">0x7f7f7f7f</span><span style="color: #990000">;</span>
+    y <span style="color: #990000">=</span> <span style="color: #990000">~(</span>y <span style="color: #990000">|</span> x <span style="color: #990000">|</span> <span style="color: #993399">0x7f7f7f7f</span><span style="color: #990000">);</span>
+    n <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nlz</span></span><span style="color: #990000">(</span>y<span style="color: #990000">)</span> <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">3</span><span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> n<span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">inline</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">zbytel_nonlz</span></span><span style="color: #990000">(</span><span style="color: #009900">unsigned</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> y<span style="color: #990000">;</span>
+    <span style="color: #009900">int</span> n<span style="color: #990000">;</span>
+    y <span style="color: #990000">=</span> <span style="color: #990000">(</span>x <span style="color: #990000">&amp;</span> <span style="color: #993399">0x7f7f7f7f</span><span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #993399">0x7f7f7f7f</span><span style="color: #990000">;</span>
+    y <span style="color: #990000">=</span> <span style="color: #990000">~(</span>y <span style="color: #990000">|</span> x <span style="color: #990000">|</span> <span style="color: #993399">0x7f7f7f7f</span><span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">(</span>y <span style="color: #990000">==</span> <span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #993399">4</span><span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">(</span>y <span style="color: #990000">&gt;</span> <span style="color: #993399">0xffff</span><span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #990000">(</span>y <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">31</span><span style="color: #990000">)</span> <span style="color: #990000">^</span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #990000">(</span>y <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">15</span><span style="color: #990000">)</span> <span style="color: #990000">^</span> <span style="color: #993399">3</span><span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span>
+</tt></pre></div></div>
+<div class="listingblock">
+<div class="title">Proof</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">zbytel_ref</span></span><span style="color: #990000">(</span><span style="color: #009900">unsigned</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">((</span>x <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">24</span><span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">((</span>x <span style="color: #990000">&amp;</span> <span style="color: #993399">0x00ff0000</span><span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">((</span>x <span style="color: #990000">&amp;</span> <span style="color: #993399">0x0000ff00</span><span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #993399">2</span><span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">((</span>x <span style="color: #990000">&amp;</span> <span style="color: #993399">0x000000ff</span><span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #993399">3</span><span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #993399">4</span><span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span>
+
+<span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> x <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">zbytel</span></span><span style="color: #990000">(</span>x<span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #000000">zbytel_ref</span></span><span style="color: #990000">(</span>x<span style="color: #990000">));</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">zbytel_nonlz</span></span><span style="color: #990000">(</span>x<span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #000000">zbytel_ref</span></span><span style="color: #990000">(</span>x<span style="color: #990000">));</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_no_proofs_in_this_chapter_2">7. (no proofs in this chapter)</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_no_proofs_in_this_chapter_3">8. (no proofs in this chapter)</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_no_proofs_in_this_chapter_4">9. (no proofs in this chapter)</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>&#160;</p></div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_integer_division_by_constants">10. Integer Division By Constants</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_no_proofs_in_this_section_5">10.1. (no proofs in this section)</h3>
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+<div class="sect2">
+<h3 id="_no_proofs_in_this_section_6">10.2. (no proofs in this section)</h3>
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+<div class="sect2">
+<h3 id="_no_proofs_in_this_section_7">10.3. (no proofs in this section)</h3>
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+<div class="sect2">
+<h3 id="_no_proofs_in_this_section_8">10.4. (no proofs in this section)</h3>
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+<div class="sect2">
+<h3 id="_no_proofs_in_this_section_9">10.5. (no proofs in this section)</h3>
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+<div class="sect2">
+<h3 id="_no_proofs_in_this_section_10">10.6. (no proofs in this section)</h3>
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+<div class="sect2">
+<h3 id="_no_proofs_in_this_section_11">10.7. (no proofs in this section)</h3>
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+<div class="sect2">
+<h3 id="_unsigned_division_by_3">10.8. Unsigned Division by 3</h3>
+<div class="sect3">
+<h4 id="_unsigned_division_by_3_2">10.8.1. Unsigned division by 3</h4>
+<div class="listingblock">
+<div class="title">Implementation</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">inline</span></span> <span style="color: #009900">unsigned</span> <span style="font-weight: bold"><span style="color: #000000">udiv3</span></span><span style="color: #990000">(</span><span style="color: #008080">uint32_t</span> dividend<span style="color: #990000">,</span> <span style="color: #009900">unsigned</span> <span style="color: #990000">*</span>remainder<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="color: #008080">uint32_t</span> q <span style="color: #990000">=</span> <span style="color: #990000">(</span>dividend <span style="color: #990000">*</span> <span style="color: #990000">(</span>uint64_t<span style="color: #990000">)</span><span style="color: #993399">0xAAAAAAABu</span><span style="color: #990000">)</span> <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">33</span><span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">(</span>remainder<span style="color: #990000">)</span> <span style="color: #990000">*</span>remainder <span style="color: #990000">=</span> dividend <span style="color: #990000">-</span> q <span style="color: #990000">*</span> <span style="color: #993399">3</span><span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> q<span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="listingblock">
+<div class="title">Proof</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> n <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="color: #009900">unsigned</span> r<span style="color: #990000">;</span>
+    <span style="color: #009900">unsigned</span> q <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">udiv3</span></span><span style="color: #990000">(</span>n<span style="color: #990000">,</span> <span style="color: #990000">&amp;</span>r<span style="color: #990000">);</span>
+
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span>q <span style="color: #990000">*</span> <span style="color: #993399">3</span> <span style="color: #990000">+</span> r <span style="color: #990000">==</span> n<span style="color: #990000">);</span>
+    <span style="font-style: italic"><span style="color: #9A1900">// cbmc is not able to prove this, or anything else I could come up with to</span></span>
+    <span style="font-style: italic"><span style="color: #9A1900">// fully prove division-by-3, in a reasonable period of time</span></span>
+    <span style="font-style: italic"><span style="color: #9A1900">//assert(r &lt; 3);</span></span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_some_elementary_functions">11. Some Elementary Functions</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_no_proofs_in_this_section_12">11.1. (no proofs in this section)</h3>
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+<div class="sect2">
+<h3 id="_no_proofs_in_this_section_13">11.2. (no proofs in this section)</h3>
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+<div class="sect2">
+<h3 id="_no_proofs_in_this_section_14">11.3. (no proofs in this section)</h3>
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+<div class="sect2">
+<h3 id="_integer_logarithm">11.4. Integer Logarithm</h3>
+<div class="sect3">
+<h4 id="_integer_log_10">11.4.1. Integer log 10</h4>
+<div class="listingblock">
+<div class="title">Implementation</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #000080">#include</span></span> <span style="color: #FF0000">"nlz.h"</span>
+
+<span style="font-style: italic"><span style="color: #9A1900">// "one table lookup, branch free" (figure 11-12)</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">inline</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">ilog10</span></span><span style="color: #990000">(</span><span style="color: #009900">unsigned</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">int</span> y<span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">unsigned</span> table<span style="color: #990000">[</span><span style="color: #993399">11</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="color: #FF0000">{</span><span style="color: #993399">0</span><span style="color: #990000">,</span> <span style="color: #993399">9</span><span style="color: #990000">,</span> <span style="color: #993399">99</span><span style="color: #990000">,</span> <span style="color: #993399">999</span><span style="color: #990000">,</span> <span style="color: #993399">9999</span><span style="color: #990000">,</span>
+        <span style="color: #993399">99999</span><span style="color: #990000">,</span> <span style="color: #993399">999999</span><span style="color: #990000">,</span> <span style="color: #993399">9999999</span><span style="color: #990000">,</span> <span style="color: #993399">99999999</span><span style="color: #990000">,</span> <span style="color: #993399">999999999</span><span style="color: #990000">,</span> <span style="color: #993399">0xFFFFFFFF</span><span style="color: #FF0000">}</span><span style="color: #990000">;</span>
+
+    y <span style="color: #990000">=</span> <span style="color: #990000">(</span><span style="color: #993399">19</span><span style="color: #990000">*(</span><span style="color: #993399">31</span> <span style="color: #990000">-</span> <span style="font-weight: bold"><span style="color: #000000">nlz</span></span><span style="color: #990000">(</span>x<span style="color: #990000">)))</span> <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">6</span><span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> y <span style="color: #990000">+</span> <span style="color: #990000">((</span>table<span style="color: #990000">[</span>y<span style="color: #990000">+</span><span style="color: #993399">1</span><span style="color: #990000">]-</span>x<span style="color: #990000">)</span> <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">31</span><span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="listingblock">
+<div class="title">Proof</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-style: italic"><span style="color: #9A1900">// "simple table search" (figure 11-7)</span></span>
+<span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">ilog10_simple</span></span><span style="color: #990000">(</span><span style="color: #009900">unsigned</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">int</span> i<span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">unsigned</span> table<span style="color: #990000">[</span><span style="color: #993399">11</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="color: #FF0000">{</span><span style="color: #993399">0</span><span style="color: #990000">,</span> <span style="color: #993399">9</span><span style="color: #990000">,</span> <span style="color: #993399">99</span><span style="color: #990000">,</span> <span style="color: #993399">999</span><span style="color: #990000">,</span> <span style="color: #993399">9999</span><span style="color: #990000">,</span>
+        <span style="color: #993399">99999</span><span style="color: #990000">,</span> <span style="color: #993399">999999</span><span style="color: #990000">,</span> <span style="color: #993399">9999999</span><span style="color: #990000">,</span> <span style="color: #993399">99999999</span><span style="color: #990000">,</span> <span style="color: #993399">999999999</span><span style="color: #990000">,</span> <span style="color: #993399">0xFFFFFFFF</span><span style="color: #FF0000">}</span><span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">for</span></span><span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> <span style="color: #993399">11</span><span style="color: #990000">;</span> i<span style="color: #990000">++)</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">(</span>x <span style="color: #990000">&lt;=</span> table<span style="color: #990000">[</span>i<span style="color: #990000">+</span><span style="color: #993399">1</span><span style="color: #990000">])</span> <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> i<span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span><span style="color: #993399">0</span><span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span>
+
+<span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> u <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="font-weight: bold"><span style="color: #000000">assume</span></span><span style="color: #990000">(</span>u<span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">ilog10_simple</span></span><span style="color: #990000">(</span>u<span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #000000">ilog10</span></span><span style="color: #990000">(</span>u<span style="color: #990000">));</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_no_proofs_in_this_chapter_5">12. (no proofs in this chapter)</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_no_proofs_in_this_chapter_6">13. (no proofs in this chapter)</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_no_proofs_in_this_chapter_7">14. (no proofs in this chapter)</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>&#160;</p></div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_error_correcting_codes">15. Error correcting codes</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_no_proofs_in_this_section_15">15.1. (no proofs in this section)</h3>
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+<div class="sect2">
+<h3 id="_no_proofs_in_this_section_16">15.2. (no proofs in this section)</h3>
+<div class="paragraph"><p>&#160;</p></div>
+</div>
+<div class="sect2">
+<h3 id="_software_for_sec_ded_on_32_information_bits">15.3. Software for SEC-DED on 32 Information Bits</h3>
+<div class="paragraph"><div class="title">Implementation</div><p>The test <span class="monospaced">hamming_exhaustive_012.c</span> in the Hackers Delight code
+distribution, which exhaustively tests the ~3354×10<sup>9</sup> combinations of
+0, 1 and 2 bits is noted to take 24 hours on "linux61".  This proof takes about
+3s on a core i5 CPU.  An improvement of over 25,000x is nothing to sneeze at.</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #000080">#include</span></span> <span style="color: #FF0000">&lt;parity.h&gt;</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">inline</span></span> <span style="color: #009900">unsigned</span> <span style="font-weight: bold"><span style="color: #000000">checkbits</span></span><span style="color: #990000">(</span><span style="color: #009900">unsigned</span> u<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="font-style: italic"><span style="color: #9A1900">/* Computes the six parity check bits for the</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">    "information" bits given in the 32-bit word u. The</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">    check bits are p[5:0]. On sending, an overall parity</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">    bit will be prepended to p (by another process).</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">    Bit Checks these bits of u</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">    p[0] 0, 1, 3, 5, ..., 31 (0 and the odd positions).</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">    p[1] 0, 2-3, 6-7, ..., 30-31 (0 and positions xxx1x).</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">    p[2] 0, 4-7, 12-15, 20-23, 28-31 (0 and posns xx1xx).</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">    p[3] 0, 8-15, 24-31 (0 and positions x1xxx).</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">    p[4] 0, 16-31 (0 and positions 1xxxx).</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">    p[5] 1-31 */</span></span>
+    <span style="color: #009900">unsigned</span> p0<span style="color: #990000">,</span> p1<span style="color: #990000">,</span> p2<span style="color: #990000">,</span> p3<span style="color: #990000">,</span> p4<span style="color: #990000">,</span> p5<span style="color: #990000">,</span> p6<span style="color: #990000">,</span> p<span style="color: #990000">;</span>
+    <span style="color: #009900">unsigned</span> t1<span style="color: #990000">,</span> t2<span style="color: #990000">,</span> t3<span style="color: #990000">;</span>
+    <span style="font-style: italic"><span style="color: #9A1900">// First calculate p[5:0] ignoring u[0].</span></span>
+    p0 <span style="color: #990000">=</span> u <span style="color: #990000">^</span> <span style="color: #990000">(</span>u <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">2</span><span style="color: #990000">);</span>
+    p0 <span style="color: #990000">=</span> p0 <span style="color: #990000">^</span> <span style="color: #990000">(</span>p0 <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">4</span><span style="color: #990000">);</span>
+    p0 <span style="color: #990000">=</span> p0 <span style="color: #990000">^</span> <span style="color: #990000">(</span>p0 <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">8</span><span style="color: #990000">);</span>
+    p0 <span style="color: #990000">=</span> p0 <span style="color: #990000">^</span> <span style="color: #990000">(</span>p0 <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">16</span><span style="color: #990000">);</span>               <span style="font-style: italic"><span style="color: #9A1900">// p0 is in posn 1.</span></span>
+
+    t1 <span style="color: #990000">=</span> u <span style="color: #990000">^</span> <span style="color: #990000">(</span>u <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">1</span><span style="color: #990000">);</span>
+    p1 <span style="color: #990000">=</span> t1 <span style="color: #990000">^</span> <span style="color: #990000">(</span>t1 <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">4</span><span style="color: #990000">);</span>
+    p1 <span style="color: #990000">=</span> p1 <span style="color: #990000">^</span> <span style="color: #990000">(</span>p1 <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">8</span><span style="color: #990000">);</span>
+    p1 <span style="color: #990000">=</span> p1 <span style="color: #990000">^</span> <span style="color: #990000">(</span>p1 <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">16</span><span style="color: #990000">);</span>               <span style="font-style: italic"><span style="color: #9A1900">// p1 is in posn 2.</span></span>
+
+    t2 <span style="color: #990000">=</span> t1 <span style="color: #990000">^</span> <span style="color: #990000">(</span>t1 <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">2</span><span style="color: #990000">);</span>
+    p2 <span style="color: #990000">=</span> t2 <span style="color: #990000">^</span> <span style="color: #990000">(</span>t2 <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">8</span><span style="color: #990000">);</span>
+    p2 <span style="color: #990000">=</span> p2 <span style="color: #990000">^</span> <span style="color: #990000">(</span>p2 <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">16</span><span style="color: #990000">);</span>               <span style="font-style: italic"><span style="color: #9A1900">// p2 is in posn 4.</span></span>
+
+    t3 <span style="color: #990000">=</span> t2 <span style="color: #990000">^</span> <span style="color: #990000">(</span>t2 <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">4</span><span style="color: #990000">);</span>
+    p3 <span style="color: #990000">=</span> t3 <span style="color: #990000">^</span> <span style="color: #990000">(</span>t3 <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">16</span><span style="color: #990000">);</span>               <span style="font-style: italic"><span style="color: #9A1900">// p3 is in posn 8.</span></span>
+    p4 <span style="color: #990000">=</span> t3 <span style="color: #990000">^</span> <span style="color: #990000">(</span>t3 <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">8</span><span style="color: #990000">);</span>                <span style="font-style: italic"><span style="color: #9A1900">// p4 is in posn 16.</span></span>
+    p5 <span style="color: #990000">=</span> p4 <span style="color: #990000">^</span> <span style="color: #990000">(</span>p4 <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">16</span><span style="color: #990000">);</span>               <span style="font-style: italic"><span style="color: #9A1900">// p5 is in posn 0.</span></span>
+
+    p <span style="color: #990000">=</span> <span style="color: #990000">((</span>p0<span style="color: #990000">&gt;&gt;</span><span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #990000">&amp;</span> <span style="color: #993399">1</span><span style="color: #990000">)</span>  <span style="color: #990000">|</span> <span style="color: #990000">((</span>p1<span style="color: #990000">&gt;&gt;</span><span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #990000">&amp;</span> <span style="color: #993399">2</span><span style="color: #990000">)</span> <span style="color: #990000">|</span> <span style="color: #990000">((</span>p2<span style="color: #990000">&gt;&gt;</span><span style="color: #993399">2</span><span style="color: #990000">)</span> <span style="color: #990000">&amp;</span> <span style="color: #993399">4</span><span style="color: #990000">)</span> <span style="color: #990000">|</span>
+       <span style="color: #990000">((</span>p3<span style="color: #990000">&gt;&gt;</span><span style="color: #993399">5</span><span style="color: #990000">)</span> <span style="color: #990000">&amp;</span> <span style="color: #993399">8</span><span style="color: #990000">)</span>  <span style="color: #990000">|</span> <span style="color: #990000">((</span>p4<span style="color: #990000">&gt;&gt;</span><span style="color: #993399">12</span><span style="color: #990000">)</span> <span style="color: #990000">&amp;</span> <span style="color: #993399">16</span><span style="color: #990000">)</span> <span style="color: #990000">|</span> <span style="color: #990000">((</span>p5 <span style="color: #990000">&amp;</span> <span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #990000">&lt;&lt;</span> <span style="color: #993399">5</span><span style="color: #990000">);</span>
+    p <span style="color: #990000">=</span> p <span style="color: #990000">^</span> <span style="color: #990000">(-(</span>u <span style="color: #990000">&amp;</span> <span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #990000">&amp;</span> <span style="color: #993399">0x3F</span><span style="color: #990000">);</span>         <span style="font-style: italic"><span style="color: #9A1900">// Now account for u[0].</span></span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> p<span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">inline</span></span> <span style="color: #009900">unsigned</span> <span style="font-weight: bold"><span style="color: #000000">checkbits_and_parity_bit</span></span><span style="color: #990000">(</span><span style="color: #009900">unsigned</span> u<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> p <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">checkbits</span></span><span style="color: #990000">(</span>u<span style="color: #990000">);</span>
+    p <span style="color: #990000">=</span> p <span style="color: #990000">|</span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">parity</span></span><span style="color: #990000">(</span>u <span style="color: #990000">^</span> p<span style="color: #990000">)</span> <span style="color: #990000">&lt;&lt;</span> <span style="color: #993399">6</span><span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> p<span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">inline</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">correct</span></span><span style="color: #990000">(</span><span style="color: #009900">unsigned</span> pr<span style="color: #990000">,</span> <span style="color: #009900">unsigned</span> <span style="color: #990000">*</span>ur<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="font-style: italic"><span style="color: #9A1900">/* This function looks at the received seven check</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">       bits and 32 information bits (pr and ur) and</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">       determines how many errors occurred (under the</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">       presumption that it must be 0, 1, or 2). It returns</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">       with 0, 1, or 2, meaning that no errors, one error, or</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">       two errors occurred. It corrects the information word</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">       received (ur) if there was one error in it. */</span></span>
+    <span style="color: #009900">unsigned</span> po<span style="color: #990000">,</span> p<span style="color: #990000">,</span> syn<span style="color: #990000">,</span> b<span style="color: #990000">;</span>
+    po <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">parity</span></span><span style="color: #990000">(</span>pr <span style="color: #990000">^</span> <span style="color: #990000">*</span>ur<span style="color: #990000">);</span>         <span style="font-style: italic"><span style="color: #9A1900">// Compute overall parity</span></span>
+                                   <span style="font-style: italic"><span style="color: #9A1900">// of the received data.</span></span>
+    p <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">checkbits</span></span><span style="color: #990000">(*</span>ur<span style="color: #990000">);</span>            <span style="font-style: italic"><span style="color: #9A1900">// Calculate check bits</span></span>
+                                   <span style="font-style: italic"><span style="color: #9A1900">// for the received info.</span></span>
+    syn <span style="color: #990000">=</span> p <span style="color: #990000">^</span> <span style="color: #990000">(</span>pr <span style="color: #990000">&amp;</span> <span style="color: #993399">0x3F</span><span style="color: #990000">);</span>         <span style="font-style: italic"><span style="color: #9A1900">// Syndrome (exclusive of</span></span>
+                                   <span style="font-style: italic"><span style="color: #9A1900">// overall parity bit).</span></span>
+    <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>po <span style="color: #990000">==</span> <span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+       <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>syn <span style="color: #990000">==</span> <span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #993399">0</span><span style="color: #990000">;</span>     <span style="font-style: italic"><span style="color: #9A1900">// If no errors, return 0.</span></span>
+       <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #993399">2</span><span style="color: #990000">;</span>              <span style="font-style: italic"><span style="color: #9A1900">// Two errors, return 2.</span></span>
+    <span style="color: #FF0000">}</span>
+                                   <span style="font-style: italic"><span style="color: #9A1900">// One error occurred.</span></span>
+    <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(((</span>syn <span style="color: #990000">-</span> <span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #990000">&amp;</span> syn<span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="color: #993399">0</span><span style="color: #990000">)</span>    <span style="font-style: italic"><span style="color: #9A1900">// If syn has zero or one</span></span>
+       <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #993399">1</span><span style="color: #990000">;</span>                   <span style="font-style: italic"><span style="color: #9A1900">// bits set, then the</span></span>
+                                   <span style="font-style: italic"><span style="color: #9A1900">// error is in the check</span></span>
+                                   <span style="font-style: italic"><span style="color: #9A1900">// bits or the overall</span></span>
+                                   <span style="font-style: italic"><span style="color: #9A1900">// parity bit (no</span></span>
+                                   <span style="font-style: italic"><span style="color: #9A1900">// correction required).</span></span>
+
+    <span style="font-style: italic"><span style="color: #9A1900">// One error, and syn bits 5:0 tell where it is in ur.</span></span>
+    b <span style="color: #990000">=</span> syn <span style="color: #990000">-</span> <span style="color: #993399">31</span> <span style="color: #990000">-</span> <span style="color: #990000">(</span>syn <span style="color: #990000">&gt;&gt;</span> <span style="color: #993399">5</span><span style="color: #990000">);</span>   <span style="font-style: italic"><span style="color: #9A1900">// Map syn to range 0 to 31.</span></span>
+    <span style="color: #990000">*</span>ur <span style="color: #990000">=</span> <span style="color: #990000">*</span>ur <span style="color: #990000">^</span> <span style="color: #990000">(</span><span style="color: #993399">1u</span> <span style="color: #990000">&lt;&lt;</span> b<span style="color: #990000">);</span>       <span style="font-style: italic"><span style="color: #9A1900">// Correct the bit.</span></span>
+    <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span>
+</tt></pre></div></div>
+<div class="listingblock">
+<div class="title">Proof</div>
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">zero_errors</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> u <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="color: #009900">unsigned</span> p <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">checkbits_and_parity_bit</span></span><span style="color: #990000">(</span>u<span style="color: #990000">);</span>
+    <span style="color: #009900">unsigned</span> v <span style="color: #990000">=</span> u<span style="color: #990000">;</span>
+    <span style="color: #009900">unsigned</span> po <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">parity</span></span><span style="color: #990000">(</span>p <span style="color: #990000">^</span> u<span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span>po <span style="color: #990000">==</span> <span style="color: #993399">0</span><span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">correct</span></span><span style="color: #990000">(</span>p<span style="color: #990000">,</span> <span style="color: #990000">&amp;</span>v<span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="color: #993399">0</span><span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span>u <span style="color: #990000">==</span> v<span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span>
+
+<span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">introduce_error</span></span><span style="color: #990000">(</span><span style="color: #009900">unsigned</span> <span style="color: #990000">*</span>p<span style="color: #990000">,</span> <span style="color: #009900">unsigned</span> nbits<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> b <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="font-weight: bold"><span style="color: #000000">assume</span></span><span style="color: #990000">(</span>b <span style="color: #990000">&lt;</span> nbits<span style="color: #990000">);</span>
+    <span style="color: #990000">*</span>p <span style="color: #990000">=</span> <span style="color: #990000">*</span>p <span style="color: #990000">^</span> <span style="color: #990000">(</span><span style="color: #993399">1u</span> <span style="color: #990000">&lt;&lt;</span> b<span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span>
+
+<span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">introduce_errors</span></span><span style="color: #990000">(</span><span style="color: #009900">unsigned</span> <span style="color: #990000">*</span>p<span style="color: #990000">,</span> <span style="color: #009900">unsigned</span> nbits<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> b <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="color: #009900">unsigned</span> c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="font-weight: bold"><span style="color: #000000">assume</span></span><span style="color: #990000">(</span>b <span style="color: #990000">&lt;</span> nbits <span style="color: #990000">&amp;&amp;</span> c <span style="color: #990000">&lt;</span> nbits <span style="color: #990000">&amp;&amp;</span> b <span style="color: #990000">!=</span> c<span style="color: #990000">);</span>
+    <span style="color: #990000">*</span>p <span style="color: #990000">=</span> <span style="color: #990000">*</span>p <span style="color: #990000">^</span> <span style="color: #990000">(</span><span style="color: #993399">1u</span> <span style="color: #990000">&lt;&lt;</span> b<span style="color: #990000">)</span> <span style="color: #990000">^</span> <span style="color: #990000">(</span><span style="color: #993399">1u</span> <span style="color: #990000">&lt;&lt;</span> c<span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span>
+
+<span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">one_error_p</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> u <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="color: #009900">unsigned</span> p <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">checkbits_and_parity_bit</span></span><span style="color: #990000">(</span>u<span style="color: #990000">);</span>
+    <span style="color: #009900">unsigned</span> v <span style="color: #990000">=</span> u<span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #000000">introduce_error</span></span><span style="color: #990000">(&amp;</span>p<span style="color: #990000">,</span> <span style="color: #993399">7</span><span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">correct</span></span><span style="color: #990000">(</span>p<span style="color: #990000">,</span> <span style="color: #990000">&amp;</span>v<span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="color: #993399">1</span><span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span>u <span style="color: #990000">==</span> v<span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span>
+
+<span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">one_error_u</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> u <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="color: #009900">unsigned</span> p <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">checkbits_and_parity_bit</span></span><span style="color: #990000">(</span>u<span style="color: #990000">);</span>
+    <span style="color: #009900">unsigned</span> v <span style="color: #990000">=</span> u<span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #000000">introduce_error</span></span><span style="color: #990000">(&amp;</span>v<span style="color: #990000">,</span> <span style="color: #993399">32</span><span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">correct</span></span><span style="color: #990000">(</span>p<span style="color: #990000">,</span> <span style="color: #990000">&amp;</span>v<span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="color: #993399">1</span><span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span>u <span style="color: #990000">==</span> v<span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span>
+
+
+<span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">two_errors_p</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> u <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="color: #009900">unsigned</span> p <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">checkbits_and_parity_bit</span></span><span style="color: #990000">(</span>u<span style="color: #990000">);</span>
+    <span style="color: #009900">unsigned</span> v <span style="color: #990000">=</span> u<span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #000000">introduce_errors</span></span><span style="color: #990000">(&amp;</span>p<span style="color: #990000">,</span> <span style="color: #993399">7</span><span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">correct</span></span><span style="color: #990000">(</span>p<span style="color: #990000">,</span> <span style="color: #990000">&amp;</span>v<span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="color: #993399">2</span><span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span>
+
+<span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">two_errors_u</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> u <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="color: #009900">unsigned</span> p <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">checkbits_and_parity_bit</span></span><span style="color: #990000">(</span>u<span style="color: #990000">);</span>
+    <span style="color: #009900">unsigned</span> v <span style="color: #990000">=</span> u<span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #000000">introduce_errors</span></span><span style="color: #990000">(&amp;</span>v<span style="color: #990000">,</span> <span style="color: #993399">32</span><span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">correct</span></span><span style="color: #990000">(</span>p<span style="color: #990000">,</span> <span style="color: #990000">&amp;</span>v<span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="color: #993399">2</span><span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span>
+
+<span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">two_errors_pu</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="color: #009900">unsigned</span> u <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">nondet_unsigned</span></span><span style="color: #990000">();</span>
+    <span style="color: #009900">unsigned</span> p <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">checkbits_and_parity_bit</span></span><span style="color: #990000">(</span>u<span style="color: #990000">);</span>
+    <span style="color: #009900">unsigned</span> v <span style="color: #990000">=</span> u<span style="color: #990000">;</span>
+    <span style="font-weight: bold"><span style="color: #000000">introduce_error</span></span><span style="color: #990000">(&amp;</span>p<span style="color: #990000">,</span> <span style="color: #993399">7</span><span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">introduce_error</span></span><span style="color: #990000">(&amp;</span>v<span style="color: #990000">,</span> <span style="color: #993399">32</span><span style="color: #990000">);</span>
+    <span style="font-weight: bold"><span style="color: #000000">assert</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">correct</span></span><span style="color: #990000">(</span>p<span style="color: #990000">,</span> <span style="color: #990000">&amp;</span>v<span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="color: #993399">2</span><span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span>
+
+<span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+    <span style="font-weight: bold"><span style="color: #000000">zero_errors</span></span><span style="color: #990000">();</span>
+    <span style="font-weight: bold"><span style="color: #000000">one_error_p</span></span><span style="color: #990000">();</span>
+    <span style="font-weight: bold"><span style="color: #000000">one_error_u</span></span><span style="color: #990000">();</span>
+    <span style="font-weight: bold"><span style="color: #000000">two_errors_p</span></span><span style="color: #990000">();</span>
+    <span style="font-weight: bold"><span style="color: #000000">two_errors_u</span></span><span style="color: #990000">();</span>
+    <span style="font-weight: bold"><span style="color: #000000">two_errors_pu</span></span><span style="color: #990000">();</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr></div>
+<div id="footer">
+<div id="footer-text">
+Last updated
+ 2021-06-10 22:59:44 UTC
+</div>
+</div>
+</body>
+</html>
